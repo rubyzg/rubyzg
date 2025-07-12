@@ -1,0 +1,35 @@
+title: RubyZG
+description: Zagreb Ruby User Group - Connecting Ruby developers in Croatia
+baseurl: ""
+url: "https://rubyzg.org"
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  events:
+    output: true
+    permalink: /events/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
