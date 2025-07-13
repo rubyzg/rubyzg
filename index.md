@@ -36,13 +36,12 @@ layout: landing
 
 <section class="mt-12 px-2 sm:px-0">
   <h2 class="flex flex-row gap-3 text-3xl font-bold text-red-600 mb-4">
-    <span><img src="{{ '/assets/images/logo/sideways_gem.svg' | relative_url }}" class="size-8"></span>
-    <span>What’s RubyZG?</span>
+    What’s RubyZG?
   </h2>
-  <p class="text-lg leading-relaxed px-2 sm:px-4">
+  <p class="text-lg leading-relaxed">
     RubyZG is a casual, community-run meetup group for Ruby and Rails enthusiasts in Zagreb.
   </p>
-  <p class="text-lg leading-relaxed px-2 sm:px-4">
+  <p class="text-lg leading-relaxed">
     Whether you're a seasoned dev, a curious beginner, or just here to hang out and for the good vibes – you’re welcome here.
     We hang out, share ideas, hack on stuff, and learn together.
   </p>
@@ -117,7 +116,6 @@ layout: landing
           {% if latest_event.venue and latest_event.venue != "TBD" %}
             <p class="text-gray-600 mb-2">📍 {{ latest_event.venue }}</p>
           {% endif %}
-          <p class="text-sm leading-relaxed">{{ latest_event.content | strip_html | truncatewords: 30 }}</p>
           <div class="mt-3">
             <a href="{{ latest_event.url | relative_url }}" class="inline-block text-red-600 hover:text-red-800 font-medium">Read more →</a>
           </div>
