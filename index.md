@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: landing
 ---
 
 <header class="carousel-container relative overflow-hidden h-96 rounded-b-2xl sm:rounded-b-[3rem]">
@@ -58,8 +58,11 @@ layout: default
       <p class="text-lg text-gray-800 leading-relaxed mb-2">
         You don’t need to give a talk — just come hang out, grab a drink, and meet fellow Rubyists.
       </p>
-      <p class="text-lg text-gray-800 leading-relaxed">
-        Got something to share? Awesome — sign up to speak.
+      <p class="text-lg text-gray-800 leading-relaxed mb-4">
+        Got something to share? Awesome —
+        <a href="{{ '/give-a-talk/' | relative_url }}" class="text-red-600 hover:text-red-800 font-medium">
+          sign up to speak
+        </a>
       </p>
     </div>
 
@@ -71,9 +74,12 @@ layout: default
       <p class="text-lg text-gray-800 leading-relaxed mb-2">
         We're always looking for friendly venues, and hosting is a great way to support the local dev community.
       </p>
-      <p class="text-lg text-gray-800 leading-relaxed mb-2">
-        If you’ve got a space and want to get involved, sign up to host here.
+      <p class="text-lg text-gray-800 leading-relaxed mb-4">
+        If you've got a space and want to get involved, sign up to host here.
       </p>
+      <a href="{{ '/host-a-meetup/' | relative_url }}" class="inline-block bg-red-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-red-700 transition">
+        Sign up to host →
+      </a>
     </div>
 
     <div class="bg-white rounded-lg shadow p-6">

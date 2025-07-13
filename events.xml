@@ -1,0 +1,31 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | xml_escape }} - Events</title>
+    <description>{{ site.description | xml_escape }} - Upcoming and past meetup events</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/events.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    {% assign events = site.events | sort: "date" | reverse | limit: 20 %}
+    {% for event in events %}
+      <item>
+        <title>{{ event.title | xml_escape }}</title>
+        <description>{{ event.content | strip_html | xml_escape }}</description>
+        <pubDate>{{ event.date | date_to_rfc822 }}</pubDate>
+        <link>{{ event.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ event.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% if event.venue and event.venue != "" %}
+        <category>{{ event.venue | xml_escape }}</category>
+        {% endif %}
+        {% if event.event_url and event.event_url != "" %}
+        <comments>{{ event.event_url | xml_escape }}</comments>
+        {% endif %}
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

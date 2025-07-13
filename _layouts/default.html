@@ -2,6 +2,22 @@
 <html lang="en">
   {% include head.html %}
   <body class="bg-gray-50 min-h-screen flex flex-col justify-between">
+    <nav class="bg-red-600 text-white shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-12">
+          <a href="{{ '/' | relative_url }}" class="flex items-center space-x-2 text-white hover:text-red-100 transition">
+            <img src="{{ '/assets/images/logo/sideways_gem.svg' | relative_url }}" class="h-6 w-6" alt="RubyZG Logo">
+            <span class="font-semibold">RubyZG</span>
+          </a>
+          <div class="flex items-center space-x-6">
+            <a href="{{ '/events/' | relative_url }}" class="text-white hover:text-red-100 transition text-sm">Events</a>
+            <a href="{{ '/host-a-meetup/' | relative_url }}" class="text-white hover:text-red-100 transition text-sm">Host a Meetup</a>
+            <a href="{{ '/give-a-talk/' | relative_url }}" class="text-white hover:text-red-100 transition text-sm">Give a Talk</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
     <main class="container min-h-full mx-auto sm:px-4 pb-8">
       {{ content }}
     </main>
