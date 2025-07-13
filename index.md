@@ -21,9 +21,12 @@ layout: default
   <!-- Content overlay -->
   <div class="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
     <div>
-      <h1 class="text-5xl font-extrabold mb-2">RubyZG 💎</h1>
+      <div class="relative mb-2">
+        <h1 class="w-0 h-0 absolute top-0 left-0 overflow-hidden">RubyZG</h1>
+        <img src="{{ '/assets/images/logo/hero.svg' | relative_url }}" alt="RubyZG Logo" class="max-w-[80%] sm:max-w-[50%] mx-auto mb-4">
+      </div>
       <p class="text-xl mb-6">Zagreb's Ruby meetup group</p>
-      <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:mt-0">
+      <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:mt-0 items-center justify-center">
         <a href="https://www.meetup.com/rubyzg/" target="_blank" class="inline-block bg-white text-red-600 font-bold py-2 px-6 rounded-full shadow hover:bg-red-50 transition">🎉 Join the Meetup</a>
         <a href="https://www.meetup.com/rubyzg/events/?type=upcoming" target="_blank" class="inline-block bg-white text-red-600 font-bold py-2 px-6 rounded-full shadow hover:bg-red-50 transition">📅 Next Event</a>
       </div>
