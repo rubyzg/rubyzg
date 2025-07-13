@@ -1,0 +1,102 @@
+---
+layout: default
+---
+
+<article class="max-w-4xl mx-auto px-4 py-8">
+  <header class="mb-8">
+    <h1 class="text-4xl font-bold text-red-600 mb-4">{{ page.title }}</h1>
+
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">📅 When</h3>
+          <p class="text-gray-600">{{ page.date | date: "%A, %B %d, %Y at %I:%M %p" }}</p>
+        </div>
+
+        {% if page.venue and page.venue != "TBD" and page.venue != "" %}
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">📍 Where</h3>
+          <p class="text-gray-600">{{ page.venue }}</p>
+          {% if page.address and page.address != "TBD" and page.address != "" %}
+            <p class="text-sm text-gray-500">{{ page.address }}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+
+      {% if page.event_url and page.event_url != "" %}
+      <div class="mt-4 pt-4 border-t border-gray-200">
+        <a href="{{ page.event_url }}" target="_blank" class="inline-block bg-red-600 text-white font-bold py-2 px-6 rounded-full shadow hover:bg-red-700 hover:scale-105 transition">
+          View on Meetup →
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="prose prose-lg max-w-none mb-8">
+    {{ content }}
+  </div>
+
+  <style>
+    .prose p {
+      margin-bottom: 1rem;
+    }
+  </style>
+
+  {% if page.pictures and page.pictures.size > 0 %}
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold text-red-600 mb-4">📸 Photos</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for picture in page.pictures %}
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          <img src="{{ picture.url | relative_url }}" alt="{{ picture.caption | default: page.title }}" class="w-full h-48 object-cover">
+          {% if picture.caption %}
+            <div class="p-3">
+              <p class="text-sm text-gray-600">{{ picture.caption }}</p>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.videos and page.videos.size > 0 %}
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold text-red-600 mb-4">🎥 Videos</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {% for video in page.videos %}
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          {% if video.type == "youtube" %}
+            <div class="aspect-video">
+              <iframe src="https://www.youtube.com/embed/{{ video.id }}" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
+            </div>
+          {% elsif video.type == "vimeo" %}
+            <div class="aspect-video">
+              <iframe src="https://player.vimeo.com/video/{{ video.id }}" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
+            </div>
+          {% else %}
+            <video controls class="w-full">
+              <source src="{{ video.url | relative_url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          {% endif %}
+          {% if video.title %}
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800">{{ video.title }}</h3>
+              {% if video.description %}
+                <p class="text-sm text-gray-600 mt-1">{{ video.description }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <nav class="mt-8 pt-8 border-t border-gray-200">
+    <a href="{{ '/' | relative_url }}" class="inline-block text-red-600 hover:text-red-800 font-medium">← Back to Home</a>
+  </nav>
+</article>

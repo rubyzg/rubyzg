@@ -6,6 +6,7 @@ url: "https://rubyzg.org"
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
+future: true
 
 plugins:
   - jekyll-feed
@@ -15,14 +16,9 @@ plugins:
 collections:
   events:
     output: true
-    permalink: /events/:name/
+    permalink: /:collection/:name/
 
 defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
   - scope:
       path: ""
       type: "events"
@@ -30,6 +26,8 @@ defaults:
       layout: "event"
 
 exclude:
+  - scripts
   - Gemfile
   - Gemfile.lock
   - README.md
+  - LICENSE
