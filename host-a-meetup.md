@@ -103,18 +103,30 @@ title: Host a Meetup
 
   <div class="bg-white rounded-lg shadow p-6">
     <h2 class="text-2xl font-bold text-red-600 mb-4">Past Host Companies</h2>
-    <p class="text-gray-700 mb-4">
+    <p class="text-gray-700 mb-6">
       We're grateful to all the companies that have opened their doors to the RubyZG community:
     </p>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
-      <div>• Devōt</div>
-      <div>• DECODE</div>
-      <div>• Productive</div>
-      <div>• Infinum</div>
-      <div>• Mews</div>
-      <div>• Kodius</div>
-      <div>• And many more!</div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-center">
+      <a href="https://devot.team/" target="_blank" class="flex items-center justify-center p-4 hover:bg-gray-50 rounded-lg transition group h-24 sm:h-20">
+        <img src="{{ '/assets/images/companies/devot.png' | relative_url }}" alt="Devōt" class="max-h-16 max-w-32 sm:max-h-10 sm:max-w-24 object-contain group-hover:scale-105 transition">
+      </a>
+      <a href="https://decode.agency/" target="_blank" class="flex items-center justify-center p-4 hover:bg-gray-50 rounded-lg transition group h-24 sm:h-20">
+        <img src="{{ '/assets/images/companies/decode.svg' | relative_url }}" alt="DECODE" class="max-h-16 max-w-32 sm:max-h-10 sm:max-w-24 object-contain group-hover:scale-105 transition">
+      </a>
+      <a href="https://productive.io/" target="_blank" class="flex items-center justify-center p-4 hover:bg-gray-50 rounded-lg transition group h-24 sm:h-20">
+        <img src="{{ '/assets/images/companies/productive.png' | relative_url }}" alt="Productive" class="max-h-16 max-w-32 sm:max-h-10 sm:max-w-24 object-contain group-hover:scale-105 transition">
+      </a>
+      <a href="https://infinum.com/" target="_blank" class="flex items-center justify-center p-4 hover:bg-gray-50 rounded-lg transition group h-24 sm:h-20">
+        <img src="{{ '/assets/images/companies/infinum.svg' | relative_url }}" alt="Infinum" class="max-h-16 max-w-32 sm:max-h-10 sm:max-w-24 object-contain group-hover:scale-105 transition">
+      </a>
+      <a href="https://www.mews.com/" target="_blank" class="flex items-center justify-center p-4 hover:bg-gray-50 rounded-lg transition group h-24 sm:h-20">
+        <img src="{{ '/assets/images/companies/mews.svg' | relative_url }}" alt="Mews" class="max-h-16 max-w-32 sm:max-h-10 sm:max-w-24 object-contain group-hover:scale-105 transition">
+      </a>
+      <a href="https://kodius.com/" target="_blank" class="flex items-center justify-center p-4 hover:bg-gray-50 rounded-lg transition group h-24 sm:h-20">
+        <img src="{{ '/assets/images/companies/kodius.svg' | relative_url }}" alt="Kodius" class="max-h-16 max-w-32 sm:max-h-10 sm:max-w-24 object-contain group-hover:scale-105 transition">
+      </a>
     </div>
+    <p class="text-center text-gray-500 text-sm mt-6">And many more!</p>
   </div>
 
   <nav class="mt-12 pt-8 border-t border-gray-200">
