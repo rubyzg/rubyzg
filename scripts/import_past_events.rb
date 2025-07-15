@@ -15,22 +15,6 @@ require 'json'
 
 API_URL = "https://www.meetup.com/gql2"
 
-# INDEX EXAMPLE
-# Request:
-# {"operationName":"getPastGroupEvents","variables":{"urlname":"rubyzg","beforeDateTime":"2025-07-13T12:09:21.863Z"},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"fe7abccb7f952c57729a6a8de13c90ee2bd7bbce38bc5ea3f8e4d0052aa95269"}}}
-# Response:
-# {"data":{"groupByUrlname":{"id":"13140052","organizer":{"isStarterOrganizer":false,"__typename":"Member"},"events":{"totalCount":88,"pageInfo":{"endCursor":"MzAzNDE2NDc4OjE3MjcxOTM2MDAwMDA=","hasNextPage":true,"__typename":"PageInfo"},"edges":[{"node":{"id":"308435495","title":"RubyZG June meetup @ Devot","eventUrl":"https://www.meetup.com/rubyzg/events/308435495/","description":"...","dateTime":"2025-06-25T18:00:00+02:00","venue":{"id":"28035576","name":"Devōt","address":"Ede Murtića 2C","city":"Zagreb","state":"","country":"hr","__typename":"Venue"}}}]}}
-
-# DETAIL EXAMPLE  
-# Request:
-# {"operationName":"getEventById","variables":{"eventId":"308435495"},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"another-hash"}}}
-# Response:
-# {"data":{"event":{"id":"308435495","title":"RubyZG June meetup @ Devot","description":"Full description...","dateTime":"2025-06-25T18:00:00+02:00","venue":{"name":"Devōt","address":"Ede Murtića 2C"}}}}
-
-# PHOTOS EXAMPLE
-# Request:
-# {"operationName":"getEventPhotos","variables":{"eventId":"308435495"},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"photo-hash"}}}
-
 def fetch_past_events(before_datetime = Time.now.iso8601, cursor = nil)
   uri = URI(API_URL)
   http = Net::HTTP.new(uri.host, uri.port)

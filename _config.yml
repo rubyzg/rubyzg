@@ -26,8 +26,13 @@ defaults:
       layout: "event"
 
 exclude:
-  - scripts
+  - scripts/
   - Gemfile
   - Gemfile.lock
   - README.md
   - LICENSE
+  - package-lock.json
+  - node_modules/
+  - .github/
+  - vendor/
+  - .bundle/
