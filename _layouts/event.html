@@ -48,7 +48,7 @@ layout: default
   {% assign event_date = page.date | date: "%Y-%m-%d" %}
   {% assign event_slug = page.title | slugify %}
   {% assign event_folder_path = "/assets/images/meetups/" | append: event_date | append: "-" | append: event_slug %}
-  
+
   {% comment %}Find images in the event folder{% endcomment %}
   {% assign folder_images = "" | split: "" %}
   {% for file in site.static_files %}
@@ -110,14 +110,14 @@ layout: default
 
     function openDialog(src) {
       const preloadedImg = preloadImage(src);
-      
+
       // Use preloaded image if available, otherwise set src directly
       if (preloadedImg.complete) {
         dialogImage.src = src;
       } else {
         dialogImage.src = src;
       }
-      
+
       dialog.showModal();
       document.body.style.overflow = 'hidden';
     }
