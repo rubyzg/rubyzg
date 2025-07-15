@@ -4,8 +4,8 @@ ical_uid: "event_309352017@meetup.com"
 title: "July RubyZG drinkup"
 date: 2025-07-24T18:00:00+02:00
 event_url: "https://www.meetup.com/rubyzg/events/309352017/"
-venue:
-address:
+venue: "Pivnica Medvedgrad"
+address: "Ilica 49, Zagreb"
 pictures: []
 videos: []
 ---
