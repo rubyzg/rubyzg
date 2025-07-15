@@ -7,7 +7,8 @@ event_url: "https://www.meetup.com/rubyzg/events/300167912/"
 venue: "HUB385"
 address: "Ul. Franje Petračića 6, Zagreb"
 pictures: []
-videos: []
+videos:
+  - "https://www.youtube.com/watch?v=-vcRkui29wU"
 ---
 
 Dear Rubyists,

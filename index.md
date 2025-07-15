@@ -7,7 +7,7 @@ layout: landing
   <div class="carousel absolute inset-0">
     {% assign image_files = site.static_files | where: "path", "/assets/images/meetups" %}
     {% for file in site.static_files %}
-      {% if file.path contains "/assets/images/meetups/" %}
+      {% if file.path contains "/assets/images/meetups/highlights/" %}
         <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
           <img data-src="{{ file.path | relative_url }}" alt="RubyZG Meetup" class="w-full h-full object-cover lazy-load">
         </div>
